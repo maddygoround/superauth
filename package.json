@@ -1,10 +1,13 @@
 {
   "name": "superauth",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Firebase Authentication React Hook",
   "main": "dist/app.js",
   "author": "Mahendra Rathod",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/maddygoround/superauth"
+  },
   "publishConfig": {
     "access": "public"
   },
