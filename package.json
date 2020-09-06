@@ -1,6 +1,6 @@
 {
   "name": "superauth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Firebase Authentication React Hook",
   "main": "dist/app.js",
   "author": "Mahendra Rathod",
