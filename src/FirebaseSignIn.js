@@ -1,12 +1,9 @@
 import AuthMethod from './AuthMethod';
 
-const signIn = (auth, provider, method = AuthMethod.WITHREDIRECT ) => {
-
+const signIn = (auth, provider, method = AuthMethod.WITHREDIRECT) => {
   const authMethod = method;
 
-  var exists = Object.keys(AuthMethod).some(function(k) {
-    return AuthMethod[k] === authMethod;
-  });
+  const exists = Object.keys(AuthMethod).some(k => AuthMethod[k] === authMethod);
 
   if (exists) {
     return provider.isOAuthProvider

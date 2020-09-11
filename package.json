@@ -1,8 +1,11 @@
 {
   "name": "superauth",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "description": "Firebase Authentication React Hook",
-  "main": "dist/app.js",
+  "main": "dist/superauth.js",
+  "umd:main": "dist/superauth.umd.js",
+  "module": "dist/superauth.mjs",
+  "source": "src/index.js",
   "author": "Mahendra Rathod",
   "license": "MIT",
   "repository": {
@@ -12,11 +15,12 @@
     "access": "public"
   },
   "scripts": {
-    "prepublishOnly": "webpack --mode=production",
+    "prepublishOnly": "npm run build",
     "lint": "eslint src",
+    "fix-lint" : "eslint src --fix",
     "prebuild": "npm run lint && rimraf dist",
-    "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "build": "microbundle -o dist/ --sourcemap false --target web --jsx React.createElement",
+    "dev": "microbundle watch -o dist/ --sourcemap false --compress false --jsx React.createElement"
   },
   "keywords": [
     "react-hooks",
@@ -28,9 +32,9 @@
     "firebase"
   ],
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
@@ -39,15 +43,12 @@
     "firebase": "^7.19.1",
     "jest": "^23.6.0",
     "jest-dom": "^3.0.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-testing-library": "^8.0.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "react-testing-library": "^5.8.0",
     "rimraf": "^2.6.2",
     "source-map-loader": "^1.1.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-node-externals": "^2.5.2"
+    "microbundle": "^0.9.0"
   },
   "dependencies": {
     "firebase": "^7.19.1",
